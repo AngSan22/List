@@ -2,11 +2,20 @@ package uaslp.objetos.list.linkedlist;
 
 public class LinkedListIterator {
 
+    private Node currentNode;
+
+    LinkedListIterator(Node starNode){
+        currentNode = starNode;
+    }
+
     public boolean hasNext(){
-        return true;
+        return currentNode != null;
     }
 
     public String next(){
-        return null;
+        String data = currentNode.data;
+        currentNode = currentNode.next;
+
+        return data;
     }
 }
