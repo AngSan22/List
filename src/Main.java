@@ -7,21 +7,23 @@ public class Main {
 
 
     public static void main(String[] Args) {
-        List team1 = new LinkedList();
-        List team2 = new LinkedList();
-        List team3 = new LinkedList();
+        List<String> team1 = new LinkedList<>();
+        List<String> team2 = new LinkedList<>();
+        List<String> team3 = new LinkedList<>();
 
+        System.out.println("Ejecuccion con Listas de tipo LinkedList");
         probarList(team1, team2, team3);
         System.out.println();
 
-        team1 = new ArrayList();
-        team2 = new ArrayList();
-        team3 = new ArrayList();
+        team1 = new ArrayList<>();
+        team2 = new ArrayList<>();
+        team3 = new ArrayList<>();
 
+        System.out.println("Ejecuccion con Listas de tipo ArrayList");
         probarList(team1, team2, team3);
     }
 
-    public static void probarList(List team1, List team2, List team3){
+    public static void probarList(List<String> team1, List<String> team2, List<String> team3){
         team1.addAtTail("Jesus");
         team1.addAtTail("Salomon");
         team1.addAtTail("Yael");
@@ -32,7 +34,7 @@ public class Main {
 
         team3.addAtFront("Imelda");
 
-        Iterator iterator;
+        Iterator<String> iterator;
 
         iterator = team1.getIterator();
 
