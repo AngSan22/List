@@ -6,7 +6,7 @@ public class ArrayListIterator<T> implements Iterator<T> {
     private final ArrayList<T> arrayList;
     private int currentItem;
 
-    ArrayListIterator(ArrayList arrayList){
+    ArrayListIterator(ArrayList<T> arrayList){
         this.arrayList = arrayList;
     }
 
