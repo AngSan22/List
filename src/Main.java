@@ -1,6 +1,8 @@
 import uaslp.objetos.list.List;
 import uaslp.objetos.list.Iterator;
 import uaslp.objetos.list.arraylist.ArrayList;
+import uaslp.objetos.list.exception.NotNullValuesAllowedException;
+import uaslp.objetos.list.exception.NotValidIndexException;
 import uaslp.objetos.list.linkedlist.LinkedList;
 
 public class Main {
@@ -12,18 +14,33 @@ public class Main {
         List<String> team3 = new LinkedList<>();
 
         System.out.println("Ejecuccion con Listas de tipo LinkedList");
-        probarList(team1, team2, team3);
-        System.out.println();
+        try {
+            probarList(team1, team2, team3);
+        }catch (NotValidIndexException ex){
+            System.out.println("Ocurrio un error: " + ex.getMessage());
+        }catch (NotNullValuesAllowedException ex){
+            System.out.println("Ocurrio un error: " + ex.getMessage());
+        }
+
+        /*System.out.println();
 
         team1 = new ArrayList<>();
         team2 = new ArrayList<>();
         team3 = new ArrayList<>();
 
         System.out.println("Ejecuccion con Listas de tipo ArrayList");
-        probarList(team1, team2, team3);
+        try {
+            probarList(team1, team2, team3);
+        }catch (NotValidIndexException ex){
+            System.out.println("Ocurrio un error: " + ex.getMessage());
+        }catch (NotNullValuesAllowedException ex){
+            System.out.println("Ocurrio un error: " + ex.getMessage());
+        }*/
     }
 
-    public static void probarList(List<String> team1, List<String> team2, List<String> team3){
+    public static void probarList(List<String> team1, List<String> team2, List<String> team3) throws NotValidIndexException, NotNullValuesAllowedException {
+        //team1.remove(5);
+        team1.addAtFront(null);
         team1.addAtTail("Jesus");
         team1.addAtTail("Salomon");
         team1.addAtTail("Yael");
