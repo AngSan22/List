@@ -21,9 +21,7 @@ public class ArrayList <T> implements List <T>{
     private void increaseArraySize(){
         T []newArray = (T[]) new Object[array.length * 2];
 
-        for (int i = 0; i < size; i++){
-            newArray[i] = array[i];
-        }
+        if (size >= 0) System.arraycopy(array, 0, newArray, 0, size);
 
         array = newArray;
     }
@@ -78,9 +76,15 @@ public class ArrayList <T> implements List <T>{
         size = 0;
     }
 
-    public void setAt(int index, T data){
+    public void setAt(int index, T data) throws NotNullValuesAllowedException, NotValidIndexException {
+        if (data == null){
+            throw new NotNullValuesAllowedException();
+        }
+
         if (index >= 0 && index < size){
             array[index] = data;
+        }else{
+            throw new NotValidIndexException(index);
         }
     }
 

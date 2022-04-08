@@ -7,7 +7,7 @@ import uaslp.objetos.list.Iterator;
 import uaslp.objetos.list.exception.NotNullValuesAllowedException;
 import uaslp.objetos.list.exception.NotValidIndexException;
 
-public class LinkedListText {
+public class LinkedListTest {
     //INICIALIZACIÓN / PREPARACIÓN
     //EJECUCIÓN --> Llamar al metodo aprobado
     //VALIDACIÓN
@@ -222,8 +222,8 @@ public class LinkedListText {
         LinkedList<String> list = new LinkedList<>();
 
         list.addAtTail("Mundo");
-        list.addAtTail("Cruel");
         list.addAtFront("Adios");
+        list.addAtTail("Cruel");
 
         //When
         list.remove(1);
