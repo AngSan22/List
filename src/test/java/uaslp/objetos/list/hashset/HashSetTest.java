@@ -108,7 +108,12 @@ public class HashSetTest {
         //Then
         int size = hash.size();
         Assertions.assertEquals(6, size);
-
+        Assertions.assertTrue(hash.contains("Hola"));
+        Assertions.assertTrue(hash.contains("Mundo"));
+        Assertions.assertTrue(hash.contains("Cruel"));
+        Assertions.assertTrue(hash.contains("Y"));
+        Assertions.assertTrue(hash.contains("Adios"));
+        Assertions.assertTrue(hash.contains("Bye"));
     }
 
     @Test
